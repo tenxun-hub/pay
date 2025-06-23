@@ -2,10 +2,19 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0;url=https://www.douyin.com/" />
     <title>跳转中...</title>
+    <script>
+      fetch("https://raw.githubusercontent.com/tenxun-hub/pay/main/link.txt")
+        .then(response => response.text())
+        .then(url => {
+          window.location.href = url.trim();  // 去掉换行跳转
+        })
+        .catch(err => {
+          document.body.innerHTML = "<h2>获取跳转地址失败，请稍后重试</h2>";
+        });
+    </script>
   </head>
   <body>
-    <p>正在跳转到页面...</p >
+    <p>正在跳转，请稍候...</p >
   </body>
 </html>
